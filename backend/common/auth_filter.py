@@ -34,12 +34,4 @@ def add(app):
         or ':808' in request.host):  # Ports 8080/8081 are used in dev env.
       return
 
-    crmint_logging.log_message(
-            f'Ian Woz Here: '
-            f'()',
-            log_level='DEBUG',
-            worker_class='N/A',
-            pipeline_id=0,
-            job_id=0)
-
-    return
+   return
