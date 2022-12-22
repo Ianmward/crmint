@@ -38,7 +38,7 @@ fi
 
 # Downloads the source code.
 if [ ! -d $HOME/crmint ]; then
-  git clone https://github.com/google/crmint.git $HOME/crmint
+  git clone https://github.com/ianmward/crmint.git $HOME/crmint
   echo "\\nCloned crmint repository to your home directory: $HOME."
 fi
 cd $HOME/crmint
