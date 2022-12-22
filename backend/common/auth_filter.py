@@ -30,8 +30,4 @@ def add(app):
   @app.before_request
   def before_filter():
     # Skip auth filter for instance management and in development environment.
-    if (request.path.startswith('/_ah/')  # Start/stop instance.
-        or ':808' in request.host):  # Ports 8080/8081 are used in dev env.
-      return
-
    return
