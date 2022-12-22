@@ -21,13 +21,13 @@ jobs:
         include:
           - dockerfile: ./frontend/Dockerfile
             context: ./frontend
-            image: europe-docker.pkg.dev/instant-bqml-demo-environment/crmint/frontend
+            image: australia-southeast1-docker.pkg.dev/instant-ml-372403/crmint/frontend
           - dockerfile: ./backend/controller.Dockerfile
             context: ./backend
-            image: europe-docker.pkg.dev/instant-bqml-demo-environment/crmint/controller
+            image: australia-southeast1-docker.pkg.dev/instant-ml-372403/crmint/controller
           - dockerfile: ./backend/jobs.Dockerfile
             context: ./backend
-            image: europe-docker.pkg.dev/instant-bqml-demo-environment/crmint/jobs
+            image: australia-southeast1-docker.pkg.dev/instant-ml-372403/crmint/jobs
     permissions:
       contents: read
       id-token: write
