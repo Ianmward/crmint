@@ -34,18 +34,4 @@ def add(app):
         or ':808' in request.host):  # Ports 8080/8081 are used in dev env.
       return
 
-    # Authenticate PubSub push messages.
-    if request.path.startswith('/push/'):
-      # Check if request came from a CRMint's push subscription.
-      if request.args.get('token', '') != _PUBSUB_VERIFICATION_TOKEN:
-        return 'Invalid request', 400
-      # Check if request is signed by PubSub.
-      try:
-        bearer_token = request.headers.get('Authorization')
-        token = bearer_token.split(' ')[1]
-        claim = id_token.verify_oauth2_token(token, _REQUEST)
-      except Exception as e:  # pylint: disable=broad-except
-        return f'Invalid token: {e}', 400
-    else:
-      # NB: User authentication is handled by Identity-Aware Proxy.
-      return
+    return
